@@ -1,0 +1,310 @@
+body {
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    
+}
+
+/* Add this to your CSS */
+#navbarsExample07 {
+  background-color: #212529; /* Matches bg-dark */
+}
+
+    .hero {
+      background: linear-gradient(to right, rgb(255, 255, 255), #ffffff);
+      color: rgb(0, 0, 0);
+      padding: 0px 0px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      
+
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding-top: 5x;
+      padding-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .store-buttons img {
+      height: 50px;
+      margin: 10px;
+    }
+
+    footer {
+      color: #ccc;
+    
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+
+
+.social-icon {
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
+
+
+  /* Bouncing image animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.bouncing-image {
+  animation: bounce 2s infinite;
+  position: relative;
+  z-index: 2;
+}
+
+/* Container for ripple effect */
+.ripple-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ripple base style */
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35%;
+  height: 35%;
+  background: rgba(177, 226, 224, 0.649); /* Light blue color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  animation: radar-ripple 3s infinite ease-out;
+  z-index: 1;
+}
+
+/* Staggered delays for multiple ripples */
+.ripple1 {
+  animation-delay: 0s;
+}
+.ripple2 {
+  animation-delay: 1s;
+}
+.ripple3 {
+  animation-delay: 2s;
+}
+
+/* Ripple animation */
+@keyframes radar-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+
+
+
+/* Animation for the cards appearing on scroll */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  /* This connects the animation to the scroll progress */
+  view-timeline-name: --revealing-card;
+  view-timeline-axis: block;
+
+  animation: linear reveal both;
+  animation-timeline: --revealing-card;
+  
+  /* The animation happens when the card is between 10% and 30% of the viewport */
+  animation-range: entry 10% cover 30%;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect to make it interactive */
+.card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #4CAF50;
+}
+
+
+
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: white;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* The "Glow" line at the top of the card */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #4CAF50, #e7ff4b);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+}
+
+
+/* Soft theme colors */
+:root {
+  --wedding-green: #4CAF50;
+  --soft-mint: #94ffb1;
+  --gold-accent: #d4af37;
+}
+
+.matrimony-card {
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: white;
+  text-align: center;
+}
+
+.border-highlight {
+  border: 2px solid var(--wedding-green) !important;
+}
+
+.matrimony-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+  border-color: var(--gold-accent) !important;
+}
+
+.value-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: var(--soft-mint);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.anime-icon {
+  width: 50px;
+  transition: transform 0.5s ease;
+}
+
+.matrimony-card:hover .anime-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Scroll reveal helper */
+.section h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 3%;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    text-align: center;
+  }
+}
